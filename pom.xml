@@ -1,0 +1,5 @@
+<project>
+  <modules>
+    <module>JettyJerseyProject</module>
+  </modules>
+</project>
