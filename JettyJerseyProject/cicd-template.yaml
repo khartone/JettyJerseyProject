@@ -49,7 +49,7 @@ objects:
     labels:
       app: cicd-pipeline
       name: cicd-pipeline
-    name: JettyJersey-pipeline
+    name: jettyjersey-pipeline
   spec:
     runPolicy: Serial
     source:
@@ -696,7 +696,7 @@ objects:
       {
         "clone_addr": "https://github.com/khartone/RESTProject.git",
         "uid": 1,
-        "repo_name": "JettyJerseyProject"
+        "repo_name": "RESTProject"
       }
       EOF
 
