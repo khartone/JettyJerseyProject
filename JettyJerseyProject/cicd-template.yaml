@@ -49,7 +49,7 @@ objects:
     labels:
       app: cicd-pipeline
       name: cicd-pipeline
-    name: tasks-pipeline
+    name: JettyJersey-pipeline
   spec:
     runPolicy: Serial
     source:
@@ -83,7 +83,7 @@ objects:
 
              stage 'Deploy DEV'
              sh "rm -rf oc-build && mkdir -p oc-build/deployments"
-             sh "cp target/JettyJerseyProject-*.jar oc-build/deployments/JettyJerseyProject.jar"
+             sh "cp JettyJerseyProject/target/JettyJerseyProject.jar oc-build/deployments/exec.jar"
              // clean up. keep the image stream
              sh "${ocCmd} delete bc,dc,svc,route -l app=tasks -n dev"
              // create build. override the exit code since it complains about exising imagestream
