@@ -76,7 +76,7 @@ objects:
              // clean up. keep the image stream
              sh "${ocCmd} delete bc,dc,svc,route -l app=tasks -n dev"
              // create build. override the exit code since it complains about exising imagestream
-             sh "${ocCmd} new-build --name=tasks --image-stream=jetty-jersey --binary=true --labels=app=tasks -n dev || true"
+             sh "${ocCmd} new-build --name=tasks -D 'FROM java:7\nEXPOSE 8080\nADD deployments/exec.jar deployments/exec.jar\nCMD [ \"java\", \"-jar\", \"deployments/exec.jar\" ]' --labels=app=tasks -n dev || true"
              // build image
              sh "${ocCmd} start-build tasks --from-dir=oc-build --wait=true -n dev"
              // deploy image
