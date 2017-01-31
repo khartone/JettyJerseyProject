@@ -25,5 +25,6 @@
 
   <modules>
     <module>JettyJerseyProject</module>
+    <module>WildflyProject</module>
   </modules>
 </project>
